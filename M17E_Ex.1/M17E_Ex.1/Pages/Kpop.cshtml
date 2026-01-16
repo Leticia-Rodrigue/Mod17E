@@ -1,0 +1,170 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<style>
+    :root {
+        --bg: #0e0f1a;
+        --text: #eaeaea;
+        --accent: #ff8fb2;
+        --accent-2: #6fc0ff;
+    }
+
+    body {
+        background: radial-gradient(1000px 600px at 20% 0%, #1b1e29 0%, var(--bg) 60%);
+        color: var(--text);
+        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .page {
+        max-width: 1029px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .display-4 {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 20px 16px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 31px;
+    }
+
+    p {
+        font-size: 1rem;
+        max-width: 113ch;
+        margin: 11px auto;
+        text-align: justify;
+    }
+
+    .kpop-card {
+        background: rgba(94, 37, 176, 0.17);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 22px;
+        margin-top: 24px;
+        box-shadow: 0 12px 30px rgba(139, 139, 139, 0.25);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+        /* Efeito hover */
+        .kpop-card:hover {
+            transform: translateY(-8px) scale(1.02); /* Leve elevação e zoom */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35); /* Sombra mais intensa */
+            background: rgba(255, 255, 255, 0.08); /* Fundo ligeiramente mais claro */
+        }
+
+        /* Títulos com gradiente */
+        .kpop-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        /* Título com leve movimento no hover do card */
+        .kpop-card:hover h2 {
+            transform: translateX(4px); /* Pequeno movimento horizontal */
+        }
+
+        .kpop-card strong {
+            color: var(--accent-2);
+        }
+
+</style>
+
+<div class="page">
+<!-- BLACKPINK -->
+<div class="kpop-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 60%;">
+                <h2>BLACKPINK</h2>
+                <p><strong>História:</strong> BLACKPINK é um grupo feminino de K-pop 
+                    formado em 2016 pela YG Entertainment, com quatro membros: Jisoo, 
+                    Jennie, Rosé e Lisa. Tornaram-se famosas mundialmente por suas músicas
+                    cativantes, presença forte nas redes sociais e performances poderosas. 
+                    São um dos grupos femininos de K-pop mais bem-sucedidos internacionalmente,
+                    com recordes de streaming, turnês globais e colaborações com artistas internacionais.</p>
+                <p><strong>Estilo musical:</strong> Misturam pop, EDM, hip-hop e R&B, com músicas enérgicas,
+                    refrões marcantes e visuais impactantes. As letras geralmente falam de empoderamento
+                    feminino, amor e confiança, e a presença de cada membro no palco é sempre destacada.</p>
+            </div>
+            <div style="width: 38%;">
+                <img src="~/jump.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
+            </div>
+        </div>
+       
+</div>
+ 
+<!-- BTS -->
+<div class="kpop-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 60%;">
+                <h2>BTS</h2>
+                <p>
+                    <strong>História:</strong>BTS é um grupo de K-pop sul-coreano formado em 2013 pela Big Hit Entertainment,
+                    com sete membros: RM, Jin, Suga, J-Hope, Jimin, V e Jungkook. Ficaram famosos por
+                    suas letras que falam de saúde mental, juventude, identidade e pressão social,
+                    tornando-se um fenômeno global com álbuns de sucesso, turnês internacionais e
+                    reconhecimento da Billboard.</p>
+                <p><strong>Estilo musical:</strong> Misturam hip-hop, pop, R&B e EDM, com músicas que combinam coreografias marcantes e letras profundas. São conhecidos por tratar de temas reais e pessoais, conectando-se fortemente com os fãs.</p>
+            </div>
+            <div style="width: 35%;">
+                <img src="~/bts.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
+            </div>
+        </div>
+</div>
+
+<!-- RIIZE -->
+<div class="kpop-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 60%;">
+                <h2>RIIZE</h2>
+                <p>
+                    <strong>História:</strong>RIIZE é um grupo de K-pop sul-coreano formado em 
+                    2023 pela SM Entertainment, com seis membros: Shotaro, Eunseok, Sungchan, 
+                    Wonbin, Sohee e Anton. Tornaram-se conhecidos rapidamente por suas performances
+                    energéticas e por misturar vocais, rap e dança de forma impactante, conquistando fãs globalmente.
+                </p>
+                <p><strong>Estilo musical:</strong> Misturam pop, hip-hop e música eletrónica, com músicas cativantes e emotivas. As letras falam sobre juventude, sonhos e crescimento pessoal, e o grupo se destaca por criar uma conexão forte com os fãs através de suas performances e storytelling musical.</p>
+            </div>
+            <div style="width: 38%;">
+                <img src="~/Riize.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
+            </div>
+        </div>
+</div>
+
+    <!-- Girl's Generation -->
+    <div class="kpop-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="width: 60%;">
+                <h2>Girl's Generation</h2>
+                <p>
+                    <strong>História:</strong>Girls’ Generation (SNSD, 소녀시대) é um grupo feminino de K-pop 
+                    sul-coreano formado em 2007 pela SM Entertainment, com nove membros originais: Taeyeon, Sunny, 
+                    Tiffany, Hyoyeon, Yuri, Sooyoung, Yoona, Seohyun e Jessica (Jessica saiu em 2014). São consideradas
+                    uma das maiores e mais influentes girl bands do K-pop, com sucesso tanto na Coreia quanto 
+                    internacionalmente, conquistando prêmios, recordes de vendas e turnês globais.
+                </p>
+                <p><strong>Estilo musical:</strong> Misturam pop, dance e R&B, com músicas cativantes, coreografias marcantes e visuais elegantes. As letras abordam amor, amizade e crescimento pessoal, e o grupo é conhecido por criar hits que definiram tendências no K-pop e na cultura pop global.</p>
+            </div>
+            <div style="width: 38%;">
+                <img src="~/girls-generation.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
+            </div>
+        </div>
+    </div>
+</div>
