@@ -1,7 +1,21 @@
+﻿using M17E_Ex._1.Pages.Data;
+using M17E_Ex._1.Pages.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// 🔹 Razor Pages
 builder.Services.AddRazorPages();
+
+// 🔹 Banco de Dados
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// 🔹 Serviço de autenticação (se estiver usando)
+builder.Services.AddScoped<AuthService>();
+
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -9,18 +23,23 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
 app.UseRouting();
+app.UseSession();
+
 
 app.UseAuthorization();
 
 app.MapStaticAssets();
 app.MapRazorPages()
    .WithStaticAssets();
+
+app.UseRouting();
+app.UseSession();
+app.UseAuthorization();
+
 
 app.Run();
