@@ -1,170 +1,180 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "História do K-Pop";
 }
+
 <style>
     :root {
-        --bg: #0e0f1a;
-        --text: #eaeaea;
-        --accent: #ff8fb2;
-        --accent-2: #6fc0ff;
+        --dark-bg: #0a0a0c;
+        --card-bg: rgba(255, 255, 255, 0.03);
+        --accent-pink: #ff4fb2;
+        --accent-blue: #6cf0ff;
+        --text-dim: #bcbcbc;
     }
 
     body {
-        background: radial-gradient(1000px 600px at 20% 0%, #1b1e29 0%, var(--bg) 60%);
-        color: var(--text);
-        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-        line-height: 1.6;
+        background-color: var(--dark-bg);
+        color: white;
+        font-family: 'Inter', sans-serif;
         margin: 0;
+        background: radial-gradient(circle at 50% 0%, #1a1b25 0%, var(--dark-bg) 100%);
     }
 
-    .page {
-        max-width: 1029px;
+    .archive-container {
+        max-width: 1300px;
         margin: 0 auto;
-        padding: 32px 20px 60px;
+        padding: 60px 20px;
     }
 
-    .text-center {
+    .header-text {
         text-align: center;
+        margin-bottom: 60px;
     }
 
-    .display-4 {
-        font-size: 3rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin: 20px 16px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    .header-text h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: -2px;
+        margin: 0;
+        background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
         -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        margin-bottom: 31px;
+        -webkit-text-fill-color: transparent;
     }
 
-    p {
-        font-size: 1rem;
-        max-width: 113ch;
-        margin: 11px auto;
-        text-align: justify;
+    /* --- GRELHA UNIFORME ESTILO RIIZE --- */
+    .groups-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dois por linha */
+        gap: 30px;
     }
 
-    .kpop-card {
-        background: rgba(94, 37, 176, 0.17);
+    .group-item {
+        background: var(--card-bg);
         border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 16px;
-        padding: 22px;
-        margin-top: 24px;
-        box-shadow: 0 12px 30px rgba(139, 139, 139, 0.25);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        border-radius: 30px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column; /* Imagem em cima, texto em baixo */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        backdrop-filter: blur(10px);
     }
 
-        /* Efeito hover */
-        .kpop-card:hover {
-            transform: translateY(-8px) scale(1.02); /* Leve elevação e zoom */
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35); /* Sombra mais intensa */
-            background: rgba(255, 255, 255, 0.08); /* Fundo ligeiramente mais claro */
-        }
+    .group-item:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent-blue);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        background: rgba(255, 255, 255, 0.06);
+    }
 
-        /* Títulos com gradiente */
-        .kpop-card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-2));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            transition: transform 0.3s ease;
-        }
+    /* Secção da Imagem */
+    .group-image {
+        width: 100%;
+        height: 300px; /* Altura fixa para manter a simetria */
+        overflow: hidden;
+    }
 
-        /* Título com leve movimento no hover do card */
-        .kpop-card:hover h2 {
-            transform: translateX(4px); /* Pequeno movimento horizontal */
-        }
+    .group-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
 
-        .kpop-card strong {
-            color: var(--accent-2);
-        }
+    .group-item:hover .group-image img {
+        transform: scale(1.1);
+    }
+
+    /* Secção de Texto */
+    .group-info {
+        padding: 30px;
+    }
+
+    .group-info h2 {
+        font-size: 2.2rem;
+        margin: 0 0 20px 0;
+        color: white;
+    }
+
+    .group-info strong {
+        color: var(--accent-pink);
+        display: block;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 5px;
+    }
+
+    .group-info p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: var(--text-dim);
+        margin-bottom: 20px;
+    }
+
 
 </style>
 
-<div class="page">
-<!-- BLACKPINK -->
-<div class="kpop-card">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="width: 60%;">
+<div class="archive-container">
+    <div class="header-text">
+        <h1>Legacy Archive</h1>
+        <p>A história dos maiores ícones do K-Pop.</p>
+    </div>
+
+    <div class="groups-grid">
+        
+        <article class="group-item">
+            <div class="group-image">
+                <img src="~/jump.jpg" alt="Blackpink">
+            </div>
+            <div class="group-info">
                 <h2>BLACKPINK</h2>
-                <p><strong>História:</strong> BLACKPINK é um grupo feminino de K-pop 
-                    formado em 2016 pela YG Entertainment, com quatro membros: Jisoo, 
-                    Jennie, Rosé e Lisa. Tornaram-se famosas mundialmente por suas músicas
-                    cativantes, presença forte nas redes sociais e performances poderosas. 
-                    São um dos grupos femininos de K-pop mais bem-sucedidos internacionalmente,
-                    com recordes de streaming, turnês globais e colaborações com artistas internacionais.</p>
-                <p><strong>Estilo musical:</strong> Misturam pop, EDM, hip-hop e R&B, com músicas enérgicas,
-                    refrões marcantes e visuais impactantes. As letras geralmente falam de empoderamento
-                    feminino, amor e confiança, e a presença de cada membro no palco é sempre destacada.</p>
+                <strong>História</strong>
+                <p>BLACKPINK é um grupo feminino de K-pop formado em 2016 pela YG Entertainment, com quatro membros: Jisoo, Jennie, Rosé e Lisa. Tornaram-se famosas mundialmente por suas músicas cativantes e performances poderosas.</p>
+                <strong>Estilo Musical</strong>
+                <p>Misturam pop, EDM, hip-hop e R&B, com letras que focam no empoderamento feminino e na confiança.</p>
             </div>
-            <div style="width: 38%;">
-                <img src="~/jump.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
+        </article>
+
+        <article class="group-item">
+            <div class="group-image">
+                <img src="~/bts.jpg" alt="BTS">
             </div>
-        </div>
-       
-</div>
- 
-<!-- BTS -->
-<div class="kpop-card">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="width: 60%;">
+            <div class="group-info">
                 <h2>BTS</h2>
-                <p>
-                    <strong>História:</strong>BTS é um grupo de K-pop sul-coreano formado em 2013 pela Big Hit Entertainment,
-                    com sete membros: RM, Jin, Suga, J-Hope, Jimin, V e Jungkook. Ficaram famosos por
-                    suas letras que falam de saúde mental, juventude, identidade e pressão social,
-                    tornando-se um fenômeno global com álbuns de sucesso, turnês internacionais e
-                    reconhecimento da Billboard.</p>
-                <p><strong>Estilo musical:</strong> Misturam hip-hop, pop, R&B e EDM, com músicas que combinam coreografias marcantes e letras profundas. São conhecidos por tratar de temas reais e pessoais, conectando-se fortemente com os fãs.</p>
+                <strong>História</strong>
+                <p>BTS é um grupo sul-coreano formado em 2013 pela Big Hit Entertainment, com sete membros. Ficaram famosos por tratarem de temas como saúde mental e juventude.</p>
+                <strong>Estilo Musical</strong>
+                <p>Uma fusão de hip-hop, pop e R&B, caracterizada por letras introspectivas e coreografias extremamente precisas.</p>
             </div>
-            <div style="width: 35%;">
-                <img src="~/bts.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
-            </div>
-        </div>
-</div>
+        </article>
 
-<!-- RIIZE -->
-<div class="kpop-card">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="width: 60%;">
+        <article class="group-item">
+            <div class="group-image">
+                <img src="~/Riize.jpg" alt="RIIZE">
+            </div>
+            <div class="group-info">
                 <h2>RIIZE</h2>
-                <p>
-                    <strong>História:</strong>RIIZE é um grupo de K-pop sul-coreano formado em 
-                    2023 pela SM Entertainment, com seis membros: Shotaro, Eunseok, Sungchan, 
-                    Wonbin, Sohee e Anton. Tornaram-se conhecidos rapidamente por suas performances
-                    energéticas e por misturar vocais, rap e dança de forma impactante, conquistando fãs globalmente.
-                </p>
-                <p><strong>Estilo musical:</strong> Misturam pop, hip-hop e música eletrónica, com músicas cativantes e emotivas. As letras falam sobre juventude, sonhos e crescimento pessoal, e o grupo se destaca por criar uma conexão forte com os fãs através de suas performances e storytelling musical.</p>
+                <strong>História</strong>
+                <p>Formado pela SM Entertainment em 2023, o RIIZE rapidamente se estabeleceu como um líder da nova geração, simbolizando o crescimento e novos começos.</p>
+                <strong>Estilo Musical</strong>
+                <p>Pioneiros no "Emotional Pop", misturam harmonias vocais suaves com batidas modernas e nostálgicas.</p>
             </div>
-            <div style="width: 38%;">
-                <img src="~/Riize.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
-            </div>
-        </div>
-</div>
+        </article>
 
-    <!-- Girl's Generation -->
-    <div class="kpop-card">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div style="width: 60%;">
-                <h2>Girl's Generation</h2>
-                <p>
-                    <strong>História:</strong>Girls’ Generation (SNSD, 소녀시대) é um grupo feminino de K-pop 
-                    sul-coreano formado em 2007 pela SM Entertainment, com nove membros originais: Taeyeon, Sunny, 
-                    Tiffany, Hyoyeon, Yuri, Sooyoung, Yoona, Seohyun e Jessica (Jessica saiu em 2014). São consideradas
-                    uma das maiores e mais influentes girl bands do K-pop, com sucesso tanto na Coreia quanto 
-                    internacionalmente, conquistando prêmios, recordes de vendas e turnês globais.
-                </p>
-                <p><strong>Estilo musical:</strong> Misturam pop, dance e R&B, com músicas cativantes, coreografias marcantes e visuais elegantes. As letras abordam amor, amizade e crescimento pessoal, e o grupo é conhecido por criar hits que definiram tendências no K-pop e na cultura pop global.</p>
+        <article class="group-item">
+            <div class="group-image">
+                <img src="~/girls-generation.jpg" alt="Girls' Generation">
             </div>
-            <div style="width: 38%;">
-                <img src="~/girls-generation.jpg" alt="Blackpink" style="width: 100%; max-width: 500px;" />
+            <div class="group-info">
+                <h2>Girls' Generation</h2>
+                <strong>História</strong>
+                <p>O grupo lendário da SM que pavimentou o caminho global. Com uma carreira de décadas, são o padrão de excelência para todos os grupos femininos.</p>
+                <strong>Estilo Musical</strong>
+                <p>Mestras do pop vibrante e coreografias icónicas, definindo tendências que perduram até aos dias de hoje.</p>
             </div>
-        </div>
+        </article>
+
     </div>
 </div>

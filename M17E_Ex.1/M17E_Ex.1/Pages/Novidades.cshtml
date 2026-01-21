@@ -1,0 +1,156 @@
+﻿@page
+@model M17E_Ex._1.Pages.NovidadesModel
+@{
+    ViewData["Title"] = "Novidades";
+}
+
+<style>
+    :root {
+        --bg: #0e0f14;
+        --text: #eaeaea;
+        --accent: #ff4fb2;
+        --accent-2: #6cf0ff;
+        --card-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    body {
+        background: radial-gradient(circle at 20% 0%, #1b1e29 0%, var(--bg) 70%);
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        margin: 0;
+    }
+
+    .news-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 60px 40px;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .display-4 {
+        font-size: clamp(3.5rem, 8vw, 5.5rem);
+        font-weight: 900;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 10px;
+    }
+
+    /* Grelha de Notícias */
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 30px;
+    }
+
+    .news-card {
+        background: var(--card-bg);
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .news-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent);
+        box-shadow: 0 20px 40px rgba(255, 79, 178, 0.15);
+    }
+
+    .news-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .news-content {
+        padding: 30px;
+    }
+
+    .news-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 8px;
+        background: rgba(108, 240, 255, 0.15);
+        color: var(--accent-2);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .news-content h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #fff;
+    }
+
+    .news-content p {
+        color: #b0b0b0;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .btn-read-more {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: 0.3s;
+    }
+
+    .btn-read-more:hover {
+        color: var(--accent-2);
+        gap: 12px;
+    }
+</style>
+
+<div class="news-container">
+    <header class="section-header">
+        <h1 class="display-4">Novidades</h1>
+        <p class="lead-text" style="font-size: 1.2rem; color: #b0b0b0;">Fica a par dos últimos comebacks, estreias e tours mundiais.</p>
+    </header>
+
+    <div class="news-grid">
+        <article class="news-card">
+            <img src="~/noticia1.jpg" alt="Comeback" class="news-image" />
+            <div class="news-content">
+                <span class="news-badge">Comeback</span>
+                <h2>BLACKPINK anuncia nova Tour Mundial</h2>
+                <p>O grupo fenómeno global confirmou as primeiras datas da sua nova digressão que passará pela Europa em 2026.</p>
+                <a href="#" class="btn-read-more">Ler mais →</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="~/noticia2.jpg" alt="Debut" class="news-image" />
+            <div class="news-content">
+                <span class="news-badge">Novo Grupo</span>
+                <h2>O próximo grande debut da YG</h2>
+                <p>Conhece os novos talentos que prometem revolucionar a 5ª geração do K-Pop com um conceito futurista.</p>
+                <a href="#" class="btn-read-more">Ler mais →</a>
+            </div>
+        </article>
+
+        <article class="news-card">
+            <img src="~/noticia3.jpg" alt="Charts" class="news-image" />
+            <div class="news-content">
+                <span class="news-badge">Recordes</span>
+                <h2>Top 10 Global no Spotify</h2>
+                <p>Esta semana, o K-Pop dominou as tabelas de streaming com 4 grupos no topo das músicas mais ouvidas.</p>
+                <a href="#" class="btn-read-more">Ler mais →</a>
+            </div>
+        </article>
+    </div>
+</div>
